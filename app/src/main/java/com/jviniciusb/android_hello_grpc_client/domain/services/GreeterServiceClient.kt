@@ -1,6 +1,6 @@
 package com.jviniciusb.android_hello_grpc_client.domain.services
 
-import com.jviniciusb.android_hello_grpc_client.network.grpc.GrpcChannellProvider
+import com.jviniciusb.android_hello_grpc_client.network.grpc.GrpcChannelProvider
 import proto.greeter.v1.Greeter
 import proto.greeter.v1.GreeterServiceGrpcKt
 
@@ -8,7 +8,7 @@ interface GreeterServiceClient {
     suspend fun sayHello(name: String): String
 }
 
-class GreeterServiceClientImpl(private val channelProvider: GrpcChannellProvider) :
+class GreeterServiceClientImpl(private val channelProvider: GrpcChannelProvider) :
     GreeterServiceClient {
 
     override suspend fun sayHello(name: String): String {

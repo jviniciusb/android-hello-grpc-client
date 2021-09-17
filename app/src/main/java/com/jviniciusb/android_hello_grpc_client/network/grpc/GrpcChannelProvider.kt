@@ -6,15 +6,15 @@ import io.grpc.android.AndroidChannelBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.asExecutor
 
-interface GrpcChannellProvider {
+interface GrpcChannelProvider {
     fun channel(): ManagedChannel
 }
 
-class GrpcAndroidChannellProvider(
+class GrpcAndroidChannelProvider(
     private val context: Context,
     private val address: String,
     private val port: Int
-) : GrpcChannellProvider {
+) : GrpcChannelProvider {
 
     private lateinit var _channel: ManagedChannel
 
